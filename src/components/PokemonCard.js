@@ -16,11 +16,31 @@ const PokemonCard = ( { pokemonUrl } ) => {
   console.log( pokemon )
   
   return (
-    <div onClick={ ( ) => navigate( `/pokemon/${ pokemon.id }` ) }>
-        <h3>{ pokemon.name }</h3>
-        <img src={ pokemon.sprites.front_default } alt="" />
+    
+      <div className='cards-poke'>
+        <div className=''>
+          <div>
+            <div  
+              className='cards-pokemon' 
+              onClick={ ( ) => navigate( `/pokemon/${ pokemon.id }` ) }>
+              <img className='img-cards' src={ pokemon.sprites?.other["official-artwork"].front_default } alt="" />
+              <h3 className='title-cards'>{ pokemon.name }</h3>
+            </div>
+            <div className='cards-data'>
+              <div className='weigth'>
+                <p><span>Weight</span></p>
+                <p>{ pokemon.weight }</p>
+              </div>
+              <div className='height'>
+                <p><span>Height</span></p>
+                <p>{ pokemon.height }</p>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
+    
 
-    </div>
   );
 };
 
